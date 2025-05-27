@@ -1,0 +1,90 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\esp-home-hub\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/esp/esp-home-hub/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+[2/11] No install step for 'bootloader'
+[3/11] Completed 'bootloader'
+[4/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[5/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esp_now_hub.c.obj
+D:/esp/esp-home-hub/main/esp_now_hub.c: In function 'handle_recv_callback':
+D:/esp/esp-home-hub/main/esp_now_hub.c:127:27: warning: passing argument 1 of 'print_data_to_console' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  127 |     print_data_to_console(weather_data);
+      |                           ^~~~~~~~~~~~
+D:/esp/esp-home-hub/main/esp_now_hub.c:98:51: note: expected 'data_station_t *' but argument is of type 'const data_station_t *'
+   98 | static void print_data_to_console(data_station_t *weather_data)
+      |                                   ~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+D:/esp/esp-home-hub/main/esp_now_hub.c: In function 'espnow_init':
+D:/esp/esp-home-hub/main/esp_now_hub.c:155:34: warning: unused variable 'send_param' [-Wunused-variable]
+  155 |     example_espnow_send_param_t *send_param;
+      |                                  ^~~~~~~~~~
+[6/11] Linking C static library esp-idf\main\libmain.a
+[7/11] Generating ld/sections.ld
+[8/11] Linking CXX executable esp-home-hub.elf
+[9/11] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated D:/esp/esp-home-hub/build/esp-home-hub.bin
+[10/11] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\esp-home-hub\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.4.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/esp/esp-home-hub/build/partition_table/partition-table.bin D:/esp/esp-home-hub/build/esp-home-hub.bin"
+esp-home-hub.bin binary size 0xbbf70 bytes. Smallest app partition is 0x100000 bytes. 0x44090 bytes (27%) free.
+[10/11] C:\Windows\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.4.1\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.4.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.4_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/esptool/esptool.py;--chip;esp32c3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/esp/esp-home-hub/build -P C:/Espressif/frameworks/esp-idf-v5.4.1/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32c3 -p COM7 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 esp-home-hub.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port COM7
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE, Embedded Flash 4MB (XMC)
+Crystal is 40MHz
+MAC: 48:ca:43:cf:ff:68
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000cbfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20832 bytes to 13060...
+Writing at 0x00000000... (100 %)
+Wrote 20832 bytes (13060 compressed) at 0x00000000 in 0.3 seconds (effective 497.2 kbit/s)...
+Hash of data verified.
+Compressed 769904 bytes to 444000...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001bce2... (7 %)
+Writing at 0x000247c6... (10 %)
+Writing at 0x0002d8e8... (14 %)
+Writing at 0x00033eab... (17 %)
+Writing at 0x0003b84b... (21 %)
+Writing at 0x00042900... (25 %)
+Writing at 0x00048cb0... (28 %)
+Writing at 0x0004f4fc... (32 %)
+Writing at 0x0005668d... (35 %)
+Writing at 0x0005d02f... (39 %)
+Writing at 0x0006309c... (42 %)
+Writing at 0x000690e2... (46 %)
+Writing at 0x0006eece... (50 %)
+Writing at 0x00075000... (53 %)
+Writing at 0x0007af5a... (57 %)
+Writing at 0x00081ad0... (60 %)
+Writing at 0x00088c08... (64 %)
+Writing at 0x0008fc3f... (67 %)
+Writing at 0x000965b2... (71 %)
+Writing at 0x0009c5c6... (75 %)
+Writing at 0x000a2b5e... (78 %)
+Writing at 0x000a8ef6... (82 %)
+Writing at 0x000aee15... (85 %)
+Writing at 0x000b7250... (89 %)
+Writing at 0x000be0be... (92 %)
+Writing at 0x000c518e... (96 %)
+Writing at 0x000cb2e5... (100 %)
+Wrote 769904 bytes (444000 compressed) at 0x00010000 in 6.3 seconds (effective 978.9 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 212.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
