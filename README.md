@@ -41,15 +41,19 @@ esp-weather-hub/
 
 ## ⚙️ Build & Flash Instructions
 
-### 1. Clone the repository:
+---
 
-\`\`\`bash
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```zsh
 git clone https://github.com/Hdchipeo/esp-home-hub.git
 cd esp-home-hub
-\`\`\`
 
 ### 2. Set target and configure:
 
+```zsh
 idf.py set-target esp32c3
 idf.py menuconfig
 
@@ -58,10 +62,10 @@ idf.py menuconfig
 
 ### 3. Build and flash:
 
-\`\`\`
+```zsh
 idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor (MAC/LINUX)
-\`\`\`
+
 
 *Change /dev/ttyUSB0 to COM on Windows
 
