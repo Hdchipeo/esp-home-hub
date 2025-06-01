@@ -48,7 +48,7 @@ git clone https://github.com/Hdchipeo/esp-home-hub.git
 cd esp-home-hub
 \`\`\`
 
-###2. Set target and configure:
+### 2. Set target and configure:
 
 idf.py set-target esp32c3
 idf.py menuconfig
@@ -56,7 +56,7 @@ idf.py menuconfig
 	•	In menuconfig: configure WiFi, ESP RainMaker credentials (username, password)
 	•	Configure ESP-NOW if necessary
 
-###3. Build and flash:
+### 3. Build and flash:
 
 \`\`\`
 idf.py build
