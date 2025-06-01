@@ -22,6 +22,16 @@ static const char *TAG = "espnow";
 
 static QueueHandle_t s_espnow_queue = NULL;
 
+data_station_t g_weather_data = {
+    .ldr1 = 0,
+    .ldr2 = 0,
+    .battery_capacity = 0.0f,
+    .temperature = 0.0f,
+    .rain_state = true,
+    .rain_traffic = 0,
+    .angle = 0
+};
+
 static uint8_t s_example_broadcast_mac[ESP_NOW_ETH_ALEN] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 
 static void wifi_init(void)
@@ -112,6 +122,18 @@ static void print_data_to_console(data_station_t *weather_data)
     ESP_LOGI(TAG, "Servo Angle : %d°", weather_data->angle);
 }
 
+static void fetch_weather_data_from_hub(data_station_t *weather_data)
+{
+    if (!weather_data) {
+        ESP_LOGE(TAG, "Invalid weather_data pointer!");
+        return;
+    }
+    
+    // Copy simulated data to the provided structure
+    memcpy(&g_weather_data, weather_data, sizeof(data_station_t));
+
+}
+
 static void handle_recv_callback(const example_espnow_event_recv_cb_t *recv_cb)
 {
     if (!recv_cb || !recv_cb->data) {
@@ -127,6 +149,7 @@ static void handle_recv_callback(const example_espnow_event_recv_cb_t *recv_cb)
 
     const data_station_t *weather_data = (data_station_t *)recv_cb->data;
     print_data_to_console(weather_data);
+    fetch_weather_data_from_hub(weather_data);
     free(recv_cb->data);
 }
 
@@ -205,14 +228,14 @@ static void espnow_deinit()
 void app_espnow_start(void)
 {
     // Initialize NVS
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        ESP_ERROR_CHECK( nvs_flash_erase() );
-        ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK( ret );
+    // esp_err_t ret = nvs_flash_init();
+    // if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+    //     ESP_ERROR_CHECK( nvs_flash_erase() );
+    //     ret = nvs_flash_init();
+    // }
+    // ESP_ERROR_CHECK( ret );
 
-    wifi_init();
+    //wifi_init();
     espnow_init();
 }
 void app_espnow_stop(void)
