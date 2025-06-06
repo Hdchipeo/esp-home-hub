@@ -90,6 +90,12 @@ typedef enum
 
 } rain_state_t;
 
+typedef enum
+{
+    OFF = 0,
+    ON
+}light_state_t;
+
 typedef struct
 {
     /* data */
@@ -105,5 +111,6 @@ typedef struct
 
 void app_espnow_start();
 void app_espnow_init();
+void espnow_send_light_state(bool power);
 
 #endif

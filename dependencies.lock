@@ -1,4 +1,22 @@
 dependencies:
+  cmd_nvs:
+    dependencies: []
+    source:
+      path: /Users/dangminhtam/esp/esp-idf/examples/system/console/advanced/components/cmd_nvs
+      type: local
+    version: '*'
+  cmd_system:
+    dependencies: []
+    source:
+      path: /Users/dangminhtam/esp/esp-idf/examples/system/console/advanced/components/cmd_system
+      type: local
+    version: '*'
+  cmd_wifi:
+    dependencies: []
+    source:
+      path: /Users/dangminhtam/esp/esp-idf/examples/system/console/advanced/components/cmd_wifi
+      type: local
+    version: '*'
   esp_schedule:
     dependencies: []
     source:
@@ -203,6 +221,9 @@ dependencies:
       type: local
     version: 1.4.6
 direct_dependencies:
+- cmd_nvs
+- cmd_system
+- cmd_wifi
 - espressif/esp_insights
 - espressif/esp_rainmaker
 - espressif/esp_rcp_update
@@ -215,6 +236,6 @@ direct_dependencies:
 - espressif/qrcode
 - espressif/rmaker_common
 - idf
-manifest_hash: 534b4891ce657aaa6817786692a26a04150af891caf7b622a9a3998bf4251e72
+manifest_hash: 28d8c93b906b88f8ce07d962868c053721d678c972eddfe0e2bb496b6d90af4a
 target: esp32c3
 version: 2.0.0

@@ -26,7 +26,7 @@ menu "Example Configuration"
 
     config ESPNOW_CHANNEL
         int "Channel"
-        default 1
+        default 9
         range 0 14
         help
             The channel on which sending and receiving ESPNOW data.
@@ -90,5 +90,12 @@ menu "Example Configuration"
         help
             GPIO number on which the "Boot" button is connected. This is generally used
             by the application for custom operations like toggling states, resetting to defaults, etc.
+
+	config CONSOLE_MAX_COMMAND_LINE_LENGTH
+        int "Maximum command line length"
+        default 1024
+        help
+            This value marks the maximum length of a single command line. Once it is
+            reached, no more characters will be accepted by the console.
 
 endmenu

@@ -1,6 +1,0 @@
-{
-    "idf.pythonInstallPath": "/opt/local/bin/python3",
-    "files.associations": {
-        "app_priv.h": "c"
-    }
-}
