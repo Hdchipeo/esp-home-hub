@@ -47,9 +47,10 @@ esp-weather-hub/
 
 ### 1. Clone the repository
 
-\`\`\`
+```terminal
 git clone https://github.com/Hdchipeo/esp-home-hub.git
 cd esp-home-hub
+```
 
 ### 2. Set target and configure:
 
