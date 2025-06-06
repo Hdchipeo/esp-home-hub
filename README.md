@@ -25,7 +25,7 @@ This is a central hub project using **ESP32-C3** to receive sensor data from the
 ---
 
 ## 📁 Project Structure
-\`\`\`
+```
 esp-weather-hub/
 ├── main/                  # Main code (ESP-NOW, WiFi, RainMaker)
 │   ├── espnow_recv.c      # ESP-NOW data receiving handler
@@ -35,7 +35,7 @@ esp-weather-hub/
 ├── sdkconfig              # ESP-IDF config
 ├── CMakeLists.txt
 └── README.md
-\`\`\`
+```
 
 ---
 
@@ -54,18 +54,20 @@ cd esp-home-hub
 
 ### 2. Set target and configure:
 
-\`\`\`
+```
 idf.py set-target esp32c3
 idf.py menuconfig
+```
 
 	•	In menuconfig: configure WiFi, ESP RainMaker credentials (username, password)
 	•	Configure ESP-NOW if necessary
 
 ### 3. Build and flash:
 
-\`\`\`
+```
 idf.py build
 idf.py -p /dev/ttyUSB0 flash monitor (MAC/LINUX)
+```
 
 
 *Change /dev/ttyUSB0 to COM on Windows
