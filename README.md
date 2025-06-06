@@ -4,7 +4,7 @@ This is a central hub project using **ESP32-C3** to receive sensor data from the
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - 📡 Receive sensor data from Weather Station devices via **ESP-NOW** (no WiFi required)
 - ☁️ Connect to the Internet via WiFi to sync data to the cloud using **ESP RainMaker**
@@ -13,7 +13,7 @@ This is a central hub project using **ESP32-C3** to receive sensor data from the
 
 ---
 
-## 🧰 Technologies & Hardware
+## Technologies & Hardware
 
 | Component         | Description                           |
 |-------------------|-------------------------------------|
@@ -24,7 +24,7 @@ This is a central hub project using **ESP32-C3** to receive sensor data from the
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 esp-weather-hub/
 ├── main/                  # Main code (ESP-NOW, WiFi, RainMaker)
@@ -43,7 +43,7 @@ esp-weather-hub/
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
@@ -72,12 +72,12 @@ idf.py -p /dev/ttyUSB0 flash monitor (MAC/LINUX)
 
 *Change /dev/ttyUSB0 to COM on Windows
 
-🔧 Important Notes
+Important Notes
 	•	ESP-NOW uses MAC addresses, make sure your weather-station devices are configured with compatible MACs
 	•	Ensure your ESP32-C3 has a stable WiFi connection to sync with ESP RainMaker
 	•	You need to register an account and create a project on ESP RainMaker
 
-📱 Using the ESP RainMaker App
+Using the ESP RainMaker App
 	•	Download the ESP RainMaker app on Android or iOS
 	•	Log in with your Espressif account
 	•	Connect your ESP32-C3 hub device following the app instructions
