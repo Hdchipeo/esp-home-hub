@@ -6,10 +6,10 @@ This is a central hub project using **ESP32-C3** to receive sensor data from the
 
 ## Key Features
 
-- 📡 Receive sensor data from Weather Station devices via **ESP-NOW** (no WiFi required)
-- ☁️ Connect to the Internet via WiFi to sync data to the cloud using **ESP RainMaker**
-- 📲 Control and monitor temperature and humidity on your smartphone using the ESP RainMaker app
-- 🔋 Power-efficient design, suitable for serving as a central hub in a sensor network
+- Receive sensor data from Weather Station devices via **ESP-NOW** (no WiFi required)
+- Connect to the Internet via WiFi to sync data to the cloud using **ESP RainMaker**
+- Control and monitor temperature and humidity on your smartphone using the ESP RainMaker app
+- Power-efficient design, suitable for serving as a central hub in a sensor network
 
 ---
 
