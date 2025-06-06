@@ -1,6 +1,6 @@
 # ESP32-C3 Weather Hub 🌦️📡
 
-This is a central hub project using **ESP32-C3** to receive sensor data from the `weather-station` project via **ESP-NOW**, while simultaneously syncing temperature data to a mobile app through **ESP RainMaker**.
+This is a central hub project using **ESP32-C3** to receive sensor data from the [weather-station](https://github.com/Hdchipeo/weather-station) project via **ESP-NOW**, while simultaneously syncing temperature data to a mobile app through **ESP RainMaker**.
 
 ---
 
@@ -93,3 +93,7 @@ MIT © Hdchipeo
 
 Developed by a passionate embedded developer, aiming to bring IoT to the next level! 🚀🤖
 ⸻
+
+## Related Projects
+
+- [weather-station](https://github.com/Hdchipeo/weather-station): The remote ESP-NOW-enabled weather sensor node for this central hub.
